@@ -1,7 +1,7 @@
 class Solution:
     def findComplement(self, num: int) -> int:
         # conver to binary first
-        binary = []
+        binary: list[int] = []
 
         while num > 0:
             remainder = num % 2
@@ -9,10 +9,10 @@ class Solution:
             num = num // 2
         
         # reverse the binary
-        binary = binary[::-1]
+        binary: list[int] = binary[::-1]
 
         # complement the binary
-        complement = []
+        complement: list[int] = []
         for i in binary:
             if i == 0:
                 complement.append(1)
@@ -20,7 +20,7 @@ class Solution:
                 complement.append(0)
         
         # convert the complement to decimal
-        decimal = 0
+        decimal: int = 0
         for i in range(len(complement)):
             decimal += complement[i] * (2 ** (len(complement) - i - 1))
         
